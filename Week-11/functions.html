@@ -1,23 +1,45 @@
-<script>
-    
-function noParams() {
-    alert("noParams was called.");
-}
+<!DOCTYPE html>
 
-function threeParams(param1, param2, param3) {
-    alert("threeParams was called\n" +
-          "Param 1: " + param1 + "\n" +
-          "Param 2: " + param2 + "\n" +
-          "Param 3: " + param3);
-}
+<html lang="en">
 
-function greeting() {
-    let name = prompt("What is your name?");
-    alert("Hello, " + name + "! Nice to meet you.");
-}
+  <head>
 
-noParams();
-threeParams("apple", 42, true);
-greeting();
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
 
-</script>
+  </head>
+
+  <body>
+
+    <script>
+
+      // Function with no parameters
+      function noParams() {
+        alert("noParams was called.");
+      }
+
+      // Function with three parameters
+      function threeParams(a, b, c) {
+        alert("threeParams was called");
+        alert("Parameter 1: " + a);
+        alert("Parameter 2: " + b);
+        alert("Parameter 3: " + c);
+      }
+
+      //Function that asks for a name and gives a customized greeting
+      function greeting() {
+        let username = prompt("What is your name? ");
+        alert("Hello " + username);
+      }
+
+      //Calling the functions
+      noParams();
+      threeParams("This", "is", "awesome");
+      greeting();
+
+    </script>
+
+  </body>
+
+</html>
