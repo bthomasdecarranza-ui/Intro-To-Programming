@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Drumset</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      img {
+        width: 150px;
+        cursor: pointer;
+        margin: 10px;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>My Drumset!</h1>
+    <p>Click on any drum to play a sound.</p>
+    <img id="kick" src="Drumset/images/kick.png" alt="Kick Drum" />
+    <img id="snare" src="Drumset/images/snare.png" alt="Snare Drum" />
+    <img id="crash" src="Drumset/images/crash.png" alt="Crash Cymbal" />
+    <img id="tom1" src="Drumset/images/tom1.png" alt="Tom 1" />
+    <img id="tom2" src="Drumset/images/tom2.png" alt="Tom 2" />
+    <img id="tom3" src="Drumset/images/tom3.png" alt="Tom 3" />
+    <img id="tom4" src="Drumset/images/tom4.png" alt="Tom 4" />
+
+    <script>
+
+      //SELECTING
+      let kickDrum = document.querySelector("#kick");
+      let snareDrum = document.querySelector("#snare");
+      let crashCymbal = document.querySelector("#crash");
+      let tom1 = document.querySelector("#tom1");
+      let tom2 = document.querySelector("#tom2");
+      let tom3 = document.querySelector("#tom3");
+      let tom4 = document.querySelector("#tom4");
+
+      //THE FUNCTIONS
+      function playKick() {
+        let kickSound = new Audio("Drumset/sounds/kick-bass.mp3");
+        kickSound.play();
+      }
+      function playSnare() {
+        let snareSound = new Audio("Drumset/sounds/snare.mp3");
+        snareSound.play();
+      }
+      function playCrash() {
+        let crashSound = new Audio("Drumset/sounds/crash.mp3");
+        crashSound.play();
+      }
+      function playTom1() {
+        let tom1Sound = new Audio("Drumset/sounds/tom-1.mp3");
+        tom1Sound.play();
+      }
+      function playTom2() {
+        let tom2Sound = new Audio("Drumset/sounds/tom-2.mp3");
+        tom2Sound.play();
+      }
+      function playTom3() {
+        let tom3Sound = new Audio("Drumset/sounds/tom-3.mp3");
+        tom3Sound.play();
+      }
+      function playTom4() {
+        let tom4Sound = new Audio("Drumset/sounds/tom-4.mp3");
+        tom4Sound.play();
+      }
+
+      //LISTENERS
+      kickDrum.addEventListener("click", playKick);
+      snareDrum.addEventListener("click", playSnare);
+      crashCymbal.addEventListener("click", playCrash);
+      tom1.addEventListener("click", playTom1);
+      tom2.addEventListener("click", playTom2);
+      tom3.addEventListener("click", playTom3);
+      tom4.addEventListener("click", playTom4);
+
+    </script>
+
+  </body>
+
+</html>
