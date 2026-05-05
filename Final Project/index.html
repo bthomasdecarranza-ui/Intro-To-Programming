@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scattered Figures</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.min.js"></script>
+
+</head>
+
+<body>
+
+  <script>
+
+    const canvasWidth = 600;
+    const canvasHeight = 400;
+    const colors = ["coral", "gold", "olive", "salmon", "wheat"];
+    const wipeAfter = 100;
+
+    let shapeCount = 0;
+
+    function setup() {
+      createCanvas(canvasWidth, canvasHeight);
+      background(250, 240, 230);
+
+      window.addEventListener("mousedown", handleMouseDown);
+    }
+
+    function draw() {
+      if (shapeCount > wipeAfter) {
+        background(250, 240, 230);
+        shapeCount = 0;
+      }
+
+      let shapeType = random(0, 3);
+
+      if (shapeType < 1) {
+        drawRandomCircle();
+      } else if (shapeType < 2) {
+        drawRandomRect();
+      } else {
+        drawRandomTriangle();
+      }
+
+      shapeCount += 1;
+    }
+
+    function handleMouseDown() {
+      background(250, 240, 230);
+      shapeCount = 0;
+    }
+
+    function drawRandomCircle() {
+      let x = random(0, canvasWidth);
+      let y = random(0, canvasHeight);
+      let size = random(canvasHeight / 25, canvasHeight / 6);
+      let chosenColor = random(colors);
+      fill(chosenColor);
+      circle(x, y, size);
+    }
+
+    function drawRandomRect() {
+      let x = random(0, canvasWidth);
+      let y = random(0, canvasHeight);
+      let size = random(canvasHeight / 25, canvasHeight / 10);
+      let chosenColor = random(colors);
+      fill(chosenColor);
+      rect(x, y, size, size);
+    }
+
+    function drawRandomTriangle() {
+      let x = random(0, canvasWidth);
+      let y = random(0, canvasHeight);
+      let size = random(canvasHeight / 20, canvasHeight / 8);
+      let chosenColor = random(colors);
+      fill(chosenColor);
+      triangle(x, y, x + size, y, x + size / 2, y - size);
+    }
+
+// I changed the title because circles only seemed kind of lazy and wanted to do a thorough job. 
+//Also I didnt add the "click, drag, and press keys to change the art as it grows" section because I just didn't know how and didnt want to use AI to write code given our previous conversation. I did add a mousedown to compensate for that. Hope I dont get points taken out because of that. I did to the best of my abilities.
+
+  </script>
+
+</body>
+
+</html>
